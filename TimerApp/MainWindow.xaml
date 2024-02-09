@@ -1,0 +1,32 @@
+﻿<Window x:Class="zad1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zad1"
+        mc:Ignorable="d"
+        Title="Время by Sanoyk1" Height="467" Width="673" >
+    <Grid Height="451" VerticalAlignment="Center" HorizontalAlignment="Left" Width="673">
+        <Button x:Name="AddTimerMainWPF" Content="Добавить Таймер" Margin="15,69,556,362" Click="AddTimerMainWPF_Click"/>
+        <Label Content="Ваши таймеры:" Margin="10,94,569,331" RenderTransformOrigin="-0.008,0.655"/>
+        <Menu x:Name="File" Margin="15,29,603,387">
+            <MenuItem Header="Файл" Height="35" Width="55">
+                <MenuItem x:Name="Open" Header="Открыть" Click="Open_Click"/>
+                <MenuItem x:Name="Save" Header="Сохранить" Click="Save_Click"/>
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="ListBoxTimers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="15,125,481,225" SelectionChanged="ListBoxTimers_SelectionChanged"/>
+        <Label x:Name="UntilTo" HorizontalAlignment="Left" Margin="197,160,0,0" VerticalAlignment="Top" Height="101" Width="457" FontSize="18">
+            <Menu/>
+        </Label>
+        <Button x:Name="TimerOn" Content="Вкл" Margin="0,0,481,72" VerticalAlignment="Bottom" Height="93" Click="TimerOn_Click" HorizontalAlignment="Right" Width="132"/>
+        <Button x:Name="TimerOff" Content="Выкл" Margin="0,0,343,72" VerticalAlignment="Bottom" Height="93" Click="TimerOff_Click" HorizontalAlignment="Right" Width="131"/>
+        <Label x:Name="TimeLeft" Content="" HorizontalAlignment="Left" Margin="148,18,0,0" VerticalAlignment="Top" Height="102" Width="515" FontSize="36"/>
+        <Button x:Name="Edit" Content="Редактировать" Margin="0,286,203,0" VerticalAlignment="Top" Height="93" Click="Edit_Click" HorizontalAlignment="Right" Width="132"/>
+        <Button x:Name="Delete" Content="Удалить" Margin="0,286,64,0" VerticalAlignment="Top" Height="93" Click="Delete_Click" HorizontalAlignment="Right" Width="132"/>
+        <ComboBox x:Name="Format" HorizontalAlignment="Left" Margin="197,125,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="dd\:hh\:mm\:ss"/>
+            <ComboBoxItem Content="total ss"/>
+        </ComboBox>
+    </Grid>
+</Window>
