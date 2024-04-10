@@ -37,6 +37,5 @@ namespace zad1
         {
             DialogResult = false;
         }
-        
     }
 }

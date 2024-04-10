@@ -219,12 +219,19 @@ namespace zad1
             if (LeftTime <= TimeSpan.Zero)
             {
                 Stopwatch.Stop();
+
+                //Попытка вывести уведомление по верх всех окон
+                Topmost = true;
+
                 MessageBox.Show("Время настало!", "Get Up!");
                 timerOn = false;
                 UntilTo.Content = "Отчитывать до: " + LabelLeftTime;
             }
+
+            //Выключаем по верх всех окон
+            Topmost = false;
         }
-        
+
         //For text files
         private string LinkToFile()
         {
@@ -243,12 +250,12 @@ namespace zad1
         }
         private void Open_Click(object sender, RoutedEventArgs e)
         {
-
             Timers.Clear();
             ListBoxTimers.Items.Clear();
             //открытие файла для чтения
             StreamReader file = new StreamReader(@LinkToFile());
 
+            //Чтение справки в начале файла
             for (int i = 0; i < 5; i++)
             {
                 file.ReadLine();
@@ -281,12 +288,11 @@ namespace zad1
                         "Ниже приведена строгая типизация файла.\n" +
                         "Обязательно сохранять пустые строки между будильниками. Также изменения производить стоит путем\n" +
                         "замены одних чисел на нужные, с учетом того что максимальное число в первых трех (с право на лево)\n" +
-                        "парах нулей = 59. Строки с именами можно менять произвольно, не оставляя их пустыми.");
+                        "парах нулей = 59. Строки с именами можно менять произвольно, не оставляя их пустыми." + "\n");
 
                     for (int i = 0; i < count; i++)
                     {
                         var name = ListBoxTimers.Items[i];
-                        outputFile.WriteLine("");
                         outputFile.WriteLine(name.ToString());
                         outputFile.WriteLine(Timers[name.ToString()]);
                     }

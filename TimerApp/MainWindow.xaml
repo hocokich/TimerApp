@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:zad1"
         mc:Ignorable="d"
-        Title="Время by Sanoyk1" Height="467" Width="673" >
+        Title="Время by Sanoyk" Height="467" Width="673" ResizeMode="NoResize" >
+    
     <Grid Height="451" VerticalAlignment="Center" HorizontalAlignment="Left" Width="673">
         <Button x:Name="AddTimerMainWPF" Content="Добавить Таймер" Margin="15,69,556,362" Click="AddTimerMainWPF_Click"/>
         <Label Content="Ваши таймеры:" Margin="10,94,569,331" RenderTransformOrigin="-0.008,0.655"/>
